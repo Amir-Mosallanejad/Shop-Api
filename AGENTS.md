@@ -33,3 +33,11 @@
 - Build: `dotnet build`
 - Run: `docker compose up --build`
 - Migration: `dotnet ef migrations add <Name>`
+
+## Commit Rules
+
+- Use conventional commit messages: `type(scope): summary`
+- Valid types: feat, fix, docs, chore, refactor, test
+- One logical change per commit (atomic commits)
+- Never use `git add -A`
+- Show the diff and wait for explicit user confirmation before committing
