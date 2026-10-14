@@ -14,7 +14,6 @@ public sealed class Category : BaseEntity
 
     public string Name { get; private set; }
 
-    // TODO(phase-04): enforce slug uniqueness with a database unique index.
     public string Slug { get; private set; }
 
     public Guid? ParentId { get; private set; }

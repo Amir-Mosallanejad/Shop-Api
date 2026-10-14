@@ -14,7 +14,6 @@ public sealed class Order : BaseEntity
 
     private readonly List<OrderItem> _items = new();
 
-    // TODO(phase-04): enforce order number uniqueness with a database unique index.
     public string OrderNumber { get; private set; }
 
     public Guid UserId { get; private set; }
