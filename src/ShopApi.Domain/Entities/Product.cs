@@ -30,6 +30,15 @@ public sealed class Product : BaseEntity
 
     public IReadOnlyCollection<ProductImage> Images => _images.AsReadOnly();
 
+    // EF Core materialization only. Domain code must use the public constructor.
+    private Product()
+    {
+        Name = null!;
+        Slug = null!;
+        Description = null!;
+        Price = null!;
+    }
+
     public Product(string name, string description, Money price, int stock, Guid categoryId, string? slug = null)
     {
         Name = EnsureName(name);

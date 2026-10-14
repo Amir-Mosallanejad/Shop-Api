@@ -23,6 +23,12 @@ public sealed class OrderItem : BaseEntity
 
     public Money LineTotal => UnitPrice * Quantity;
 
+    // EF Core materialization only. Domain code must use the public constructor.
+    private OrderItem()
+    {
+        UnitPrice = null!;
+    }
+
     public OrderItem(Guid orderId, Guid productId, int quantity, Money unitPrice)
     {
         if (productId == Guid.Empty)
